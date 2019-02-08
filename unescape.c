@@ -119,9 +119,9 @@ unescape(const char *in, char *out, size_t outsiz)
 				/*
 				 * RFC 3629, 3. UTF-8 definition
 				 */
-				if (U <= 0x0000007F) {
+				if (U <= 0x0000007F)
 					out[j++] = U & 0x7F;
-				} else if (U <= 0x000007FF) {
+				else if (U <= 0x000007FF) {
 					if (j + 1 >= outsiz)
 						goto fail;
 					out[j++] = 0xC0 | ((U >> 6) & 0x1F);
@@ -141,8 +141,7 @@ unescape(const char *in, char *out, size_t outsiz)
 					out[j++] = 0x80 | (U & 0x3F);
 				} else
 					goto fail;
-
-				--i;
+				--i;	/* prepare for ++ at the for loop */
 			}
 		}
 	}
