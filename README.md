@@ -1,7 +1,7 @@
 unescape.c
 ==========
 
-Simple implementation which unescapes JSON's escaped strings.
+Simple implementation which unescapes JSON's escaped UTF-8 encoded strings.
 
 Example:
 
